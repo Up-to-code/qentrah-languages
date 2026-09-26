@@ -4,7 +4,7 @@ Tags: multilingual, translation, language switcher, rtl, block editor
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,3 +48,7 @@ Yes. It uses each post's normal WordPress permalink and supports plain or pretty
 == Changelog ==
 = 0.1.0 =
 Initial preview: native editing workflow, language relationships, switcher, metadata and export.
+
+== Changelog ==
+= 0.2.0 =
+Dedicated Languages menu, toolbar shortcut, searchable page/post translation manager, create-and-edit drafts, optional locale, and illustrated four-language manuals.

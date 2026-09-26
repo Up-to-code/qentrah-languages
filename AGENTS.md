@@ -3,7 +3,7 @@
 Read `.qentrah-product.json` and the linked original family registry before updates.
 
 
-- This repository is the design origin. Read `qentrah-family.json` before changing or creating an adaptation.
+- This is a standalone public plugin repository. The linked family registry belongs to the original design repository; do not publish private theme source here.
 - Each implementation lives in its own repository. Preserve the legacy WordPress repository; develop the new production implementation separately. The standalone language plugin is not owned by a theme.
 - Whenever creating, cloning or deriving a new product, register its real repository URL, platform, status, version, page coverage, documentation and artifact URL in the family registry and README. Add a backlink and `.qentrah-product.json` to the child. Do not list a planned repository as shipped.
 - Track the source design commit independently of downstream implementation commits. Never infer that a child is synchronized merely because its version is newer.
@@ -14,3 +14,5 @@ Read `.qentrah-product.json` and the linked original family registry before upda
 - Global colors/fonts must be editable in WordPress, reflected in the editor and frontend, sanitized and preserved through updates.
 - Treat marketplace claims as testable claims. Distinguish lab SEO/performance checks from field metrics, tested compatibility from aspirations, and preview releases from approved WordPress.org releases. Verify redistribution rights before marking third-party assets commercially cleared.
 - CI builds on pushes. Public WordPress.org deployment is a versioned-release action gated by initial approval and configured secrets, not a mirror of every development commit.
+
+- Keep the WordPress Languages manager and its illustrated manuals in sync. Regenerate EN/AR/ES/FR offline HTML using `node tools/manual.mjs`; release the manual ZIP beside the plugin. Screenshots must come from the real interface, exclude private data, and identify the installed admin language accurately.

@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - name: Validate version and PHP
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
@@ -19,10 +22,13 @@ jobs:
           grep -Fx "Stable tag: $VERSION" readme.txt
           find . -name '*.php' -print0 | xargs -0 -n1 php -l
           python3 tools/package.py
+          node tools/manual.mjs
+          cd dist/manual && zip -r ../qentrah-languages-manual.zip *.html
+          cd .. && sha256sum *.zip > SHA256SUMS
       - name: Publish GitHub ZIP
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" dist/qentrah-languages.zip --generate-notes --prerelease
+        run: gh release create "$GITHUB_REF_NAME" dist/qentrah-languages.zip dist/qentrah-languages-manual.zip dist/SHA256SUMS --generate-notes --prerelease
   wordpress-org:
     needs: release
     if: vars.WORDPRESS_ORG_APPROVED == 'true'

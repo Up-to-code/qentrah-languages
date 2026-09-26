@@ -1,27 +1,39 @@
-# Languages and editing
+# Qentrah Languages user guide
 
-## Add a language
+[Online illustrated guide](https://www.qentrah.com/documentation/qentrah-languages) · [Offline EN/AR/ES/FR manual](https://github.com/Up-to-code/qentrah-languages/releases/download/v0.2.0/qentrah-languages-manual.zip)
 
-Open Settings → Qentrah Languages. Enter a code (for example `fr`), display name (`Français`), locale (`fr_FR`) and direction. Save. Use the same code to update its label/direction. English and Arabic are defaults, not a hard limit. Set the site's default language separately.
+## 1. Install & activate
 
-## Translate a page
+Download qentrah-languages.zip from the product page or GitHub release. In WordPress, open Plugins → Add New → Upload Plugin. Select the ZIP, install, then activate. Requires WordPress 6.6+ and PHP 8.1+. Back up your site before updating. The manual ZIP is documentation, not an installable plugin.
 
-Open Pages → Edit and save current changes. In the editor's **Languages** panel, choose **Create draft** next to the destination language. This copies editable content into a separate draft. It is not automatic translation. Translate the title, text, image descriptions, buttons, excerpt and slug, then preview and publish.
+## 2. Add your languages
 
-Use **Edit translation** to switch back to the matching page in another language. The control is disabled while your current page has unsaved changes. Published translations appear in the visitor switcher; missing/draft translations do not. A review notice appears if the source content changes after the copy was created. After saving and reviewing the translation, choose **Mark reviewed** to acknowledge the current source.
+Open the Languages icon in the WordPress menu, then Settings. Enter the display name and language code, such as English / EN, العربية / AR, or Español / ES. Codes are stored in lowercase. Locale is optional (for example en_US or es_ES); choose right-to-left for Arabic. Save language. Existing content uses the default language unless assigned explicitly. Adding a language makes it available; it does not automatically translate or publish copies.
 
-Already have another-language content? Enter its page ID in **Link an existing page ID**, then choose the language. You need permission to edit both pages. The plugin refuses to replace an existing language relationship or steal a page from another multi-page translation group. The classic language metabox also exposes links and a page-language selector.
+![WordPress interface](screenshots/settings.png)
 
-## Show languages on the site
+## 3. Choose a page or post
 
-Insert the **Language switcher** block or `[qentrah_languages]` shortcode. Theme developers can call `ql_switcher()`. The Dentora Production header integrates this automatically. It uses actual published page permalinks; no forced redirects based on guessed location or browser language.
+Open Languages → Translations. Search content or change Content type to Pages, Posts, or a supported public content type. Select Manage translations. You can also use Translations in the Pages/Posts list or the Languages shortcut in the top toolbar. Save editor changes before leaving the editor. Only content you can edit is manageable.
 
-## Data and backups
+![WordPress interface](screenshots/content.png)
 
-Content remains normal WordPress posts/pages. Export content through Tools → Export, and export language settings/relationships through Settings → Qentrah Languages. Relationship JSON contains local post IDs and URLs; it is an audit/migration aid, not an automatic cross-site import. Back up the database for a full restore.
+## 4. Open or create a translation
 
-Deactivation/uninstall retains posts, options and metadata. Plugin controls and language SEO enhancements stop while it is inactive. Removing a plugin is not the same as deleting translated content.
+Each language has a card. Open editor opens its existing version. Create draft & edit copies the source layout into a separate draft and opens the normal editor. Translate the text, review images and links, and publish when ready. It is a copy for manual translation, not machine translation. Already have another translated page? Expand “Already translated? Link a page” and enter its WordPress ID. It must use the same content type and cannot replace an existing translation.
 
-## Current boundaries
+![WordPress interface](screenshots/translations.png)
 
-Additional languages need human-authored text and navigation. No machine translation, per-domain routing, taxonomy synchronization or WooCommerce synchronization is included. A copied page is a draft until reviewed. Different themes may need placement of the switcher and language-specific menus. Existing theme strings follow WordPress's own translations, not content-copy translation.
+## 5. Review changes safely
+
+Translations are separate WordPress posts with their own revisions. When source content changes, its translation shows a review notice. Compare the source, update the translation, save, then mark it reviewed. There is no automatic overwrite or live synchronized editing. Use WordPress revisions to recover edits. Change a page’s assigned language only when its current assignment is wrong.
+
+![WordPress interface](screenshots/arabic-page.png)
+
+## 6. Show languages to visitors
+
+Add the Language switcher block or [qentrah_languages] shortcode in a supported theme area. Dentora Production integrates it automatically. Only published matching translations appear; drafts and missing languages are hidden. WordPress keeps its normal URLs. The plugin adds language/direction and reciprocal hreflang for published versions. SEO rankings are not guaranteed; check your sitemap and SEO plugin on your own site.
+
+## 7. Updates, ownership & support
+
+Download versioned releases from GitHub; this preview does not automatically update through WordPress.org. Back up first, then upload the newer plugin ZIP and choose Replace current with uploaded. Your translations and settings remain in WordPress. Settings → Export relationships downloads a JSON map; use Tools → Export for content. Removing the plugin retains content but removes its switcher and language behavior. Free GPL-2.0-or-later. Report reproducible issues on GitHub without passwords or private content. WooCommerce, multisite and third-party builder integrations are not certified.

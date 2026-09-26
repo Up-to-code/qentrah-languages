@@ -1,15 +1,17 @@
-# Qentrah Languages — 0.1.0 preview
+# Qentrah Languages — 0.2.0 preview
 
 **Own your languages. Edit in WordPress.** A standalone, local-first WordPress multilingual plugin by [Qentrah](https://www.qentrah.com/).
 
-[Download plugin ZIP](https://github.com/Up-to-code/qentrah-languages/releases/tag/v0.1.0) · [User guide](docs/user-guide.md) · [Developer guide](docs/developer-guide.md) · [Deployment](docs/deployment.md) · [Competitor research](docs/market-research.md)
+[Download plugin ZIP](https://github.com/Up-to-code/qentrah-languages/releases/tag/v0.2.0) · [User guide](docs/user-guide.md) · [Developer guide](docs/developer-guide.md) · [Deployment](docs/deployment.md) · [Competitor research](docs/market-research.md)
 
 The plugin is independent of the [Dentora Production theme](https://github.com/Up-to-code/dentoralab-wordpress-production). Their shared product references live in the [original design repository](https://github.com/Up-to-code/dentoralab-clone/blob/main/qentrah-family.json). This plugin's implementation is not copied from WPML, Polylang, TranslatePress or Weglot.
+
+[Product page](https://www.qentrah.com/templates/qentrah-languages) · [Online documentation](https://www.qentrah.com/documentation/qentrah-languages) · [Download offline manual (EN/AR/ES/FR)](https://github.com/Up-to-code/qentrah-languages/releases/download/v0.2.0/qentrah-languages-manual.zip)
 
 ## Included
 
 - Add languages and RTL/LTR direction without code changes.
-- Open the matching translation from the native editor; save first to avoid losing work.
+- Dedicated Languages menu and toolbar icon; search pages/posts and manage translations outside the editor.
 - Create draft translations or link existing pages.
 - Keep normal WordPress posts, media and revisions in your own database.
 - Published-only switcher and reciprocal hreflang; source-change review notices.
@@ -20,7 +22,7 @@ The plugin is independent of the [Dentora Production theme](https://github.com/U
 
 ## Install
 
-Upload `qentrah-languages.zip` under Plugins → Add New → Upload Plugin. Activate, then open Settings → Qentrah Languages. The ZIP is independent of any theme. See [user guide](docs/user-guide.md).
+Upload `qentrah-languages.zip` under Plugins → Add New → Upload Plugin. Activate, then open Languages → Settings. The ZIP is independent of any theme. See [user guide](docs/user-guide.md).
 
 ## Build and verify
 
