@@ -1,0 +1,12 @@
+{
+  "id": "qentrah-languages",
+  "repository": "https://github.com/Up-to-code/qentrah-languages",
+  "kind": "wordpress-plugin",
+  "version": "0.1.0",
+  "status": "preview",
+  "download": "https://github.com/Up-to-code/qentrah-languages/releases/tag/v0.1.0",
+  "standalone": true,
+  "brand": "https://www.qentrah.com/",
+  "familyRegistry": "https://github.com/Up-to-code/dentoralab-clone/blob/main/qentrah-family.json",
+  "sourceDesign": null
+}

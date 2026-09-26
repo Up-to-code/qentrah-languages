@@ -1,0 +1,39 @@
+name: Versioned release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  validate:
+    uses: ./.github/workflows/ci.yml
+  release:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate version and PHP
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          grep -F "Version: $VERSION" qentrah-languages.php
+          grep -Fx "Stable tag: $VERSION" readme.txt
+          find . -name '*.php' -print0 | xargs -0 -n1 php -l
+          python3 tools/package.py
+      - name: Publish GitHub ZIP
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/qentrah-languages.zip --generate-notes --prerelease
+  wordpress-org:
+    needs: release
+    if: vars.WORDPRESS_ORG_APPROVED == 'true'
+    environment: wordpress-org
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure this is a stable version
+        run: '[[ "$GITHUB_REF_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]'
+      - uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2
+        env:
+          SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.WP_ORG_SVN_PASSWORD }}
+          SLUG: ${{ vars.WP_ORG_SLUG }}

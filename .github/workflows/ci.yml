@@ -1,0 +1,35 @@
+name: Validate and package
+on:
+  push:
+  pull_request:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PHP syntax
+        run: find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l
+      - name: Package installable ZIP
+        run: python3 tools/package.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qentrah-languages-${{ github.sha }}
+          path: dist/qentrah-languages.zip
+  wordpress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up WordPress test site
+        run: |
+          sudo service mysql start
+          mysql -uroot -proot -e 'CREATE DATABASE qentrah_test;'
+          curl -fsSL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /tmp/wp
+          php /tmp/wp core download --path=/tmp/wordpress
+          php /tmp/wp config create --path=/tmp/wordpress --dbname=qentrah_test --dbuser=root --dbpass=root --dbhost=127.0.0.1
+          php /tmp/wp core install --path=/tmp/wordpress --url=http://localhost --title=Test --admin_user=testadmin --admin_password=local-test-only --admin_email=admin@example.test --skip-email
+          ln -s "$GITHUB_WORKSPACE" /tmp/wordpress/wp-content/plugins/qentrah-languages
+          php /tmp/wp plugin activate qentrah-languages --path=/tmp/wordpress
+          php /tmp/wp --path=/tmp/wordpress --user=testadmin eval-file "$GITHUB_WORKSPACE/tests/integration.php"

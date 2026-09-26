@@ -1,0 +1,11 @@
+.git
+.github
+docs
+tools
+tests
+dist
+README.md
+AGENTS.md
+.qentrah-product.json
+.distignore
+.gitignore
