@@ -36,10 +36,10 @@
         "fr": "1. Installer et activer — Qentrah Languages"
       },
       "seoDescription": {
-        "en": "You need **WordPress 6.6 or later**, **PHP 8.1 or later**, and permission to install plugins. Back up your site before an update.",
-        "ar": "تحتاج إلى **ووردبريس 6.6 أو أحدث** و**PHP 8.1 أو أحدث** وصلاحية تثبيت الإضافات. احتفظ بنسخة احتياطية قبل التحديث.",
-        "es": "Necesitas **WordPress 6.6 o posterior**, **PHP 8.1 o posterior** y permiso para instalar plugins. Haz una copia de seguridad antes de actualizar.",
-        "fr": "Il vous faut **WordPress 6.6 ou ultérieur**, **PHP 8.1 ou ultérieur** et le droit d’installer des extensions. Sauvegardez le site avant une mise à jour."
+        "en": "You need WordPress 6.6 or later, PHP 8.1 or later, and permission to install plugins. Back up your site before an update.",
+        "ar": "تحتاج إلى ووردبريس 6.6 أو أحدث وPHP 8.1 أو أحدث وصلاحية تثبيت الإضافات. احتفظ بنسخة احتياطية قبل التحديث.",
+        "es": "Necesitas WordPress 6.6 o posterior, PHP 8.1 o posterior y permiso para instalar plugins. Haz una copia de seguridad antes de actualizar.",
+        "fr": "Il vous faut WordPress 6.6 ou ultérieur, PHP 8.1 ou ultérieur et le droit d’installer des extensions. Sauvegardez le site avant une mise à jour."
       },
       "tags": [
         "WordPress",
@@ -70,10 +70,10 @@
         "fr": "2. Ajouter des langues — Qentrah Languages"
       },
       "seoDescription": {
-        "en": "1. Open **Languages → Settings** in WordPress.\n2. Enter its **display name** in any script, such as 日本語, हिन्दी or العربية.\n3. Enter a **language tag**: `j",
-        "ar": "1. افتح **اللغات ← الإعدادات** في ووردبريس.\n2. أدخل **اسم العرض** بأي نظام كتابة مثل 日本語 أو हिन्दी أو العربية.\n3. أدخل **وسم اللغة** مثل `ja` أو `hi` أو `a",
-        "es": "1. Abre **Languages → Settings** en WordPress.\n2. Escribe el **nombre visible** en cualquier escritura: 日本語, हिन्दी o العربية.\n3. Introduce una **etiqueta ",
-        "fr": "1. Ouvrez **Languages → Settings** dans WordPress.\n2. Saisissez le **nom affiché** dans l’écriture souhaitée : 日本語, हिन्दी ou العربية.\n3. Saisissez une **é"
+        "en": "Open Languages → Settings in WordPress.\n2. Enter its display name in any script, such as 日本語, हिन्दी or العربية.\n3. Enter a language tag: j",
+        "ar": "افتح اللغات ← الإعدادات في ووردبريس.\n2. أدخل اسم العرض بأي نظام كتابة مثل 日本語 أو हिन्दी أو العربية.\n3. أدخل وسم اللغة مثل ja أو hi أو a",
+        "es": "Abre Languages → Settings en WordPress.\n2. Escribe el nombre visible en cualquier escritura: 日本語, हिन्दी o العربية.\n3. Introduce una etiqueta",
+        "fr": "Ouvrez Languages → Settings dans WordPress.\n2. Saisissez le nom affiché dans l’écriture souhaitée : 日本語, हिन्दी ou العربية.\n3. Saisissez une é"
       },
       "tags": [
         "WordPress",
