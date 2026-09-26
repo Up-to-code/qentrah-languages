@@ -8,7 +8,7 @@ Open Settings → Qentrah Languages. Enter a code (for example `fr`), display na
 
 Open Pages → Edit and save current changes. In the editor's **Languages** panel, choose **Create draft** next to the destination language. This copies editable content into a separate draft. It is not automatic translation. Translate the title, text, image descriptions, buttons, excerpt and slug, then preview and publish.
 
-Use **Edit translation** to switch back to the matching page in another language. The control is disabled while your current page has unsaved changes. Published translations appear in the visitor switcher; missing/draft translations do not. A review notice appears if the source content changes after the copy was created.
+Use **Edit translation** to switch back to the matching page in another language. The control is disabled while your current page has unsaved changes. Published translations appear in the visitor switcher; missing/draft translations do not. A review notice appears if the source content changes after the copy was created. After saving and reviewing the translation, choose **Mark reviewed** to acknowledge the current source.
 
 Already have another-language content? Enter its page ID in **Link an existing page ID**, then choose the language. You need permission to edit both pages. The plugin refuses to replace an existing language relationship or steal a page from another multi-page translation group. The classic language metabox also exposes links and a page-language selector.
 

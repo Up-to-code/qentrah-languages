@@ -13,6 +13,7 @@ try{
  ql_test(is_wp_error(ql_create_translation($source,'fr')),'Duplicate translation rejected');
  ql_test(is_wp_error(ql_create_translation($source,'zz')),'Unconfigured language rejected');
  wp_update_post(array('ID'=>$source,'post_content'=>'Changed source'));ql_test(ql_editor_state($target)['reviewNeeded'],'Source-change warning');
+ $review=new WP_REST_Request('POST','/qentrah-languages/v1/posts/'.$target);$review->set_param('review',true);$reviewed=rest_do_request($review);ql_test($reviewed->get_status()===200&&!ql_editor_state($target)['reviewNeeded'],'Review acknowledgement');
  $other=wp_insert_post(array('post_type'=>'page','post_status'=>'draft','post_title'=>'QL unrelated'));$ids[]=$other;
  ql_test(is_wp_error(ql_link_translation($source,$other,'fr')),'Do not overwrite existing translation');
  $user=wp_create_user('ql-test-'.wp_generate_password(8,false,false),wp_generate_password(30),'ql-test-'.wp_generate_password(8,false,false).'@example.test');ql_test(!is_wp_error($user),'Create subscriber fixture');wp_set_current_user($user);

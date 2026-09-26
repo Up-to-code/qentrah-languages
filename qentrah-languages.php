@@ -84,13 +84,14 @@ function ql_editor_state($id) {
     $translations=ql_translations($id);$items=array();
     foreach(ql_languages() as $code=>$language){$target=$translations[$code]??0;$allowed=$target&&current_user_can('edit_post',$target);$items[]=array('code'=>$code,'name'=>$language['name'],'id'=>$allowed?$target:0,'url'=>$allowed?get_edit_post_link($target,'raw'):'','status'=>$allowed?get_post_status($target):'missing','available'=>(bool)$target);}
     $source=(int)get_post_meta($id,'_ql_source_id',true);$hash=get_post_meta($id,'_ql_source_hash',true);
-    return array('language'=>ql_post_language($id),'translations'=>$items,'reviewNeeded'=>$source&&get_post($source)&&$hash!==hash('sha256',get_post($source)->post_content));
+    return array('language'=>ql_post_language($id),'direction'=>ql_languages()[ql_post_language($id)]['dir'],'translations'=>$items,'reviewNeeded'=>$source&&get_post($source)&&$hash!==hash('sha256',get_post($source)->post_content));
 }
 add_action('rest_api_init',function(){
     register_rest_route('qentrah-languages/v1','/posts/(?P<id>\d+)',array(
         array('methods'=>'GET','permission_callback'=>function($r){return current_user_can('edit_post',(int)$r['id']);},'callback'=>function($r){return ql_editor_state((int)$r['id']);}),
         array('methods'=>'POST','permission_callback'=>function($r){return current_user_can('edit_post',(int)$r['id']);},'callback'=>function($r){
             $source=(int)$r['id'];
+            if($r->get_param('assign')){$language=sanitize_key($r->get_param('language'));$siblings=ql_translations($source);if(!isset(ql_languages()[$language])||(isset($siblings[$language])&&$siblings[$language]!==$source))return new WP_Error('invalid_language','Language unavailable');update_post_meta($source,'_ql_language',$language);return ql_editor_state($source);}
             if($r->get_param('review')){$original=(int)get_post_meta($source,'_ql_source_id',true);if($original&&get_post($original))update_post_meta($source,'_ql_source_hash',hash('sha256',get_post($original)->post_content));return ql_editor_state($source);}
             $language=sanitize_key($r->get_param('language'));$target=absint($r->get_param('target'));
             if($target){if(!current_user_can('edit_post',$target))return new WP_Error('forbidden','Forbidden',array('status'=>403));$result=ql_link_translation($source,$target,$language);}else{$result=ql_create_translation($source,$language);}
@@ -100,7 +101,7 @@ add_action('rest_api_init',function(){
 });
 add_action('enqueue_block_editor_assets',function(){wp_enqueue_script('qentrah-languages-editor',plugins_url('assets/editor.js',__FILE__),array('wp-plugins','wp-editor','wp-components','wp-element','wp-data','wp-api-fetch','wp-i18n','wp-blocks','wp-block-editor'),QL_VERSION,true);});
 add_action('init',function(){register_block_type('qentrah/language-switcher',array('api_version'=>3,'render_callback'=>function(){return ql_switcher();}));});
-add_action('add_meta_boxes',function(){foreach(get_post_types(array('public'=>true)) as $type){if($type!=='attachment')add_meta_box('ql-translations',__('Qentrah Languages','qentrah-languages'),'ql_metabox',$type,'side');}});
+add_action('add_meta_boxes',function(){foreach(get_post_types(array('public'=>true)) as $type){if($type!=='attachment')add_meta_box('ql-translations',__('Qentrah Languages','qentrah-languages'),'ql_metabox',$type,'side','default',array('__back_compat_meta_box'=>true));}});
 function ql_metabox($post){
     wp_nonce_field('ql_language_'.$post->ID,'ql_language_nonce');echo '<p><label for="ql-language">'.esc_html__('Page language','qentrah-languages').'</label><select id="ql-language" name="ql_language">';
     foreach(ql_languages() as $code=>$language)echo '<option value="'.esc_attr($code).'" '.selected(ql_post_language($post->ID),$code,false).'>'.esc_html($language['name']).'</option>';
