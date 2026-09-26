@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "updated": "2026-09-26",
   "title": {
     "en": "Qentrah Languages — user manual",
@@ -13,7 +13,7 @@
     "es": "Instala el plugin gratuito, añade idiomas y gestiona páginas y entradas traducidas desde un solo lugar.",
     "fr": "Installez le plugin gratuit, ajoutez des langues et gérez les traductions des pages et articles depuis un seul espace."
   },
-  "download": "https://github.com/Up-to-code/qentrah-languages/releases/download/v0.2.0/qentrah-languages-manual.zip",
+  "download": "https://github.com/Up-to-code/qentrah-languages/releases/download/v0.3.0/qentrah-languages-manual.zip",
   "sections": [
     {
       "id": "install",
@@ -24,11 +24,29 @@
         "fr": "1. Installer et activer"
       },
       "text": {
-        "en": "Download qentrah-languages.zip from the product page or GitHub release. In WordPress, open Plugins → Add New → Upload Plugin. Select the ZIP, install, then activate. Requires WordPress 6.6+ and PHP 8.1+. Back up your site before updating. The manual ZIP is documentation, not an installable plugin.",
-        "ar": "نزّل qentrah-languages.zip من صفحة المنتج أو إصدار GitHub. في ووردبريس افتح إضافات ← أضف إضافة جديدة ← رفع إضافة. اختر الملف وثبّته ثم فعّله. يلزم ووردبريس 6.6 أو أحدث وPHP 8.1 أو أحدث. احتفظ بنسخة احتياطية قبل التحديث. ملف الدليل ليس إضافة قابلة للتثبيت.",
-        "es": "Descarga qentrah-languages.zip desde el producto o GitHub. En WordPress abre Plugins → Añadir nuevo → Subir plugin. Selecciona el ZIP, instala y activa. Requiere WordPress 6.6+ y PHP 8.1+. Haz una copia de seguridad antes de actualizar. El ZIP del manual no es un plugin.",
-        "fr": "Téléchargez qentrah-languages.zip depuis le produit ou GitHub. Dans WordPress : Extensions → Ajouter → Téléverser une extension. Sélectionnez le ZIP, installez et activez. WordPress 6.6+ et PHP 8.1+ requis. Sauvegardez le site avant une mise à jour. Le ZIP du guide n’est pas une extension."
-      }
+        "en": "## Before you start\n\nYou need **WordPress 6.6 or later**, **PHP 8.1 or later**, and permission to install plugins. Back up your site before an update.\n\n## Install the plugin\n\n1. [Download Qentrah Languages ZIP](https://github.com/Up-to-code/qentrah-languages/releases/download/v0.3.0/qentrah-languages.zip). Keep the ZIP compressed.\n2. In your WordPress dashboard, open **Plugins → Add New Plugin → Upload Plugin**.\n3. Select `qentrah-languages.zip`, then click **Install Now**.\n4. Click **Activate Plugin**. **Languages** appears in the WordPress menu.\n5. [Add your first language](/documentation/qentrah-languages/languages?lang=en).\n\n> The downloadable user manual is a separate document. Upload the **plugin ZIP**, not the manual ZIP.\n\n## If installation fails\n\nCheck the required WordPress/PHP versions and your account permissions. Download a fresh copy from the [GitHub release](https://github.com/Up-to-code/qentrah-languages/releases/tag/v0.3.0). If the problem continues, [report the error](https://github.com/Up-to-code/qentrah-languages/issues) without passwords or private site data.",
+        "ar": "## قبل البدء\n\nتحتاج إلى **ووردبريس 6.6 أو أحدث** و**PHP 8.1 أو أحدث** وصلاحية تثبيت الإضافات. احتفظ بنسخة احتياطية قبل التحديث.\n\n## تثبيت الإضافة\n\n1. [حمّل ملف Qentrah Languages ZIP](https://github.com/Up-to-code/qentrah-languages/releases/download/v0.3.0/qentrah-languages.zip) ولا تفك ضغطه.\n2. افتح لوحة ووردبريس ثم **إضافات ← أضف إضافة جديدة ← رفع إضافة**.\n3. اختر `qentrah-languages.zip` واضغط **التنصيب الآن**.\n4. اضغط **تفعيل الإضافة**. ستظهر **اللغات** في قائمة ووردبريس.\n5. [أضف لغتك الأولى](/documentation/qentrah-languages/languages?lang=ar).\n\n> ملف دليل المستخدم منفصل عن الإضافة. ارفع **ZIP الإضافة** وليس ملف الدليل.\n\n## إذا فشل التثبيت\n\nتحقق من إصدارات ووردبريس وPHP وصلاحيات حسابك. حمّل نسخة جديدة من [إصدار GitHub](https://github.com/Up-to-code/qentrah-languages/releases/tag/v0.3.0). إذا استمرت المشكلة، [أبلغ عن الخطأ](https://github.com/Up-to-code/qentrah-languages/issues) دون كلمات مرور أو بيانات خاصة.",
+        "es": "## Antes de empezar\n\nNecesitas **WordPress 6.6 o posterior**, **PHP 8.1 o posterior** y permiso para instalar plugins. Haz una copia de seguridad antes de actualizar.\n\n## Instalar el plugin\n\n1. [Descarga el ZIP de Qentrah Languages](https://github.com/Up-to-code/qentrah-languages/releases/download/v0.3.0/qentrah-languages.zip). No lo descomprimas.\n2. En WordPress, abre **Plugins → Añadir nuevo plugin → Subir plugin**.\n3. Selecciona `qentrah-languages.zip` y pulsa **Instalar ahora**.\n4. Pulsa **Activar plugin**. Aparecerá **Languages** en el menú.\n5. [Añade tu primer idioma](/documentation/qentrah-languages/languages?lang=es).\n\n> El manual es un documento aparte. Sube el **ZIP del plugin**, no el ZIP del manual.\n\n## Si falla la instalación\n\nComprueba las versiones y tus permisos. Descarga otra copia de la [versión en GitHub](https://github.com/Up-to-code/qentrah-languages/releases/tag/v0.3.0). [Informa del error](https://github.com/Up-to-code/qentrah-languages/issues) sin contraseñas ni datos privados.",
+        "fr": "## Avant de commencer\n\nIl vous faut **WordPress 6.6 ou ultérieur**, **PHP 8.1 ou ultérieur** et le droit d’installer des extensions. Sauvegardez le site avant une mise à jour.\n\n## Installer l’extension\n\n1. [Téléchargez le ZIP Qentrah Languages](https://github.com/Up-to-code/qentrah-languages/releases/download/v0.3.0/qentrah-languages.zip). Ne le décompressez pas.\n2. Dans WordPress, ouvrez **Extensions → Ajouter une extension → Téléverser une extension**.\n3. Sélectionnez `qentrah-languages.zip`, puis **Installer maintenant**.\n4. Cliquez sur **Activer l’extension**. **Languages** apparaît dans le menu.\n5. [Ajoutez votre première langue](/documentation/qentrah-languages/languages?lang=fr).\n\n> Le manuel est un document séparé. Téléversez le **ZIP de l’extension**, pas celui du manuel.\n\n## Si l’installation échoue\n\nVérifiez les versions et vos droits. Téléchargez une nouvelle copie de la [version GitHub](https://github.com/Up-to-code/qentrah-languages/releases/tag/v0.3.0). [Signalez l’erreur](https://github.com/Up-to-code/qentrah-languages/issues) sans mot de passe ni donnée privée."
+      },
+      "seoTitle": {
+        "en": "1. Install & activate — Qentrah Languages",
+        "ar": "١. التثبيت والتفعيل — Qentrah Languages",
+        "es": "1. Instalar y activar — Qentrah Languages",
+        "fr": "1. Installer et activer — Qentrah Languages"
+      },
+      "seoDescription": {
+        "en": "You need **WordPress 6.6 or later**, **PHP 8.1 or later**, and permission to install plugins. Back up your site before an update.",
+        "ar": "تحتاج إلى **ووردبريس 6.6 أو أحدث** و**PHP 8.1 أو أحدث** وصلاحية تثبيت الإضافات. احتفظ بنسخة احتياطية قبل التحديث.",
+        "es": "Necesitas **WordPress 6.6 o posterior**, **PHP 8.1 o posterior** y permiso para instalar plugins. Haz una copia de seguridad antes de actualizar.",
+        "fr": "Il vous faut **WordPress 6.6 ou ultérieur**, **PHP 8.1 ou ultérieur** et le droit d’installer des extensions. Sauvegardez le site avant une mise à jour."
+      },
+      "tags": [
+        "WordPress",
+        "Qentrah Languages",
+        "install",
+        "multilingual"
+      ]
     },
     {
       "id": "languages",
@@ -40,11 +58,29 @@
       },
       "image": "settings.png",
       "text": {
-        "en": "Open the Languages icon in the WordPress menu, then Settings. Enter the display name and language code, such as English / EN, العربية / AR, or Español / ES. Codes are stored in lowercase. Locale is optional (for example en_US or es_ES); choose right-to-left for Arabic. Save language. Existing content uses the default language unless assigned explicitly. Adding a language makes it available; it does not automatically translate or publish copies.",
-        "ar": "افتح أيقونة اللغات في قائمة ووردبريس ثم الإعدادات. أدخل اسم اللغة ورمزها مثل English / EN أو العربية / AR أو Español / ES. تُحفظ الرموز بحروف صغيرة. إعداد المنطقة اختياري مثل en_US أو es_ES؛ اختر الاتجاه من اليمين لليسار للعربية. احفظ اللغة. يستخدم المحتوى غير المصنّف اللغة الافتراضية. إضافة لغة تجعلها متاحة ولا تترجم المحتوى أو تنشر نسخًا تلقائيًا.",
-        "es": "Abre el icono Languages del menú de WordPress y luego Settings. Introduce el nombre y código: English / EN, العربية / AR o Español / ES. Los códigos se guardan en minúsculas. La configuración regional es opcional (en_US o es_ES); elige derecha a izquierda para árabe. Guarda el idioma. El contenido sin asignación usa el idioma predeterminado. Añadir un idioma no traduce ni publica copias automáticamente.",
-        "fr": "Ouvrez l’icône Languages du menu WordPress, puis Settings. Saisissez le nom et le code : English / EN, العربية / AR ou Español / ES. Les codes sont enregistrés en minuscules. La locale est facultative (en_US ou es_ES) ; choisissez droite à gauche pour l’arabe. Enregistrez. Le contenu non attribué utilise la langue par défaut. Ajouter une langue ne traduit ni ne publie de copies automatiquement."
-      }
+        "en": "## Add a language\n\n1. Open **Languages → Settings** in WordPress.\n2. Enter its **display name** in any script, such as 日本語, हिन्दी or العربية.\n3. Enter a **language tag**: `ja`, `hi`, `ar`, `pt-BR` or `zh-Hant`. Custom BCP 47 tags are supported; you are not limited to a predefined list.\n4. Set an optional WordPress locale such as `pt_BR`. Choose **Right to left** for RTL content; otherwise use **Left to right**.\n5. Select **Save language**.\n\n## What changes?\n\nThe language becomes available in translation management. Existing unassigned content keeps the default language. Adding a language does **not** translate text or publish copies.\n\nThe plugin stores content in any Unicode script. Its admin interface uses available WordPress translation files; this does not mean the interface has already been translated into every language.\n\n[Create a translated page](/documentation/qentrah-languages/translate?lang=en).",
+        "ar": "## إضافة لغة\n\n1. افتح **اللغات ← الإعدادات** في ووردبريس.\n2. أدخل **اسم العرض** بأي نظام كتابة مثل 日本語 أو हिन्दी أو العربية.\n3. أدخل **وسم اللغة** مثل `ja` أو `hi` أو `ar` أو `pt-BR` أو `zh-Hant`. تدعم الإضافة وسوم BCP 47 المخصصة ولا تحصرك في قائمة لغات محددة.\n4. يمكنك تحديد منطقة ووردبريس مثل `pt_BR`. اختر **من اليمين لليسار** للمحتوى العربي أو **من اليسار لليمين** حسب اللغة.\n5. اضغط **حفظ اللغة**.\n\n## ماذا يتغير؟\n\nتظهر اللغة في إدارة الترجمات. يحتفظ المحتوى غير المصنّف باللغة الافتراضية. إضافة لغة **لا تترجم النصوص ولا تنشر نسخًا**.\n\nتُحفظ النصوص بأي نظام كتابة يدعمه Unicode. تستخدم واجهة الإدارة ملفات ترجمة ووردبريس المتاحة؛ هذا لا يعني أن الواجهة مترجمة بالفعل إلى كل اللغات.\n\n[أنشئ ترجمة لصفحة](/documentation/qentrah-languages/translate?lang=ar).",
+        "es": "## Añadir un idioma\n\n1. Abre **Languages → Settings** en WordPress.\n2. Escribe el **nombre visible** en cualquier escritura: 日本語, हिन्दी o العربية.\n3. Introduce una **etiqueta de idioma**: `ja`, `hi`, `ar`, `pt-BR` o `zh-Hant`. Puedes usar etiquetas BCP 47 personalizadas, sin una lista cerrada.\n4. La configuración regional es opcional, por ejemplo `pt_BR`. Elige la dirección de escritura correcta.\n5. Pulsa **Save language**.\n\n## ¿Qué cambia?\n\nEl idioma estará disponible para traducciones. El contenido sin asignar conserva el idioma predeterminado. Añadir un idioma **no traduce ni publica copias**.\n\nEl contenido admite Unicode. La interfaz usa los archivos de traducción de WordPress disponibles; no está traducida a todos los idiomas.\n\n[Crea una página traducida](/documentation/qentrah-languages/translate?lang=es).",
+        "fr": "## Ajouter une langue\n\n1. Ouvrez **Languages → Settings** dans WordPress.\n2. Saisissez le **nom affiché** dans l’écriture souhaitée : 日本語, हिन्दी ou العربية.\n3. Saisissez une **étiquette de langue** : `ja`, `hi`, `ar`, `pt-BR` ou `zh-Hant`. Les étiquettes BCP 47 personnalisées sont acceptées, sans liste fermée.\n4. La locale WordPress est facultative, par exemple `pt_BR`. Choisissez le sens d’écriture adapté.\n5. Cliquez sur **Save language**.\n\n## Quel résultat ?\n\nLa langue est disponible pour les traductions. Le contenu non assigné conserve la langue par défaut. Ajouter une langue **ne traduit ni ne publie de copies**.\n\nLe contenu accepte Unicode. L’interface utilise les fichiers de traduction WordPress disponibles ; elle n’est pas déjà traduite dans toutes les langues.\n\n[Créez une page traduite](/documentation/qentrah-languages/translate?lang=fr)."
+      },
+      "seoTitle": {
+        "en": "2. Add your languages — Qentrah Languages",
+        "ar": "٢. إضافة اللغات — Qentrah Languages",
+        "es": "2. Añadir idiomas — Qentrah Languages",
+        "fr": "2. Ajouter des langues — Qentrah Languages"
+      },
+      "seoDescription": {
+        "en": "1. Open **Languages → Settings** in WordPress.\n2. Enter its **display name** in any script, such as 日本語, हिन्दी or العربية.\n3. Enter a **language tag**: `j",
+        "ar": "1. افتح **اللغات ← الإعدادات** في ووردبريس.\n2. أدخل **اسم العرض** بأي نظام كتابة مثل 日本語 أو हिन्दी أو العربية.\n3. أدخل **وسم اللغة** مثل `ja` أو `hi` أو `a",
+        "es": "1. Abre **Languages → Settings** en WordPress.\n2. Escribe el **nombre visible** en cualquier escritura: 日本語, हिन्दी o العربية.\n3. Introduce una **etiqueta ",
+        "fr": "1. Ouvrez **Languages → Settings** dans WordPress.\n2. Saisissez le **nom affiché** dans l’écriture souhaitée : 日本語, हिन्दी ou العربية.\n3. Saisissez une **é"
+      },
+      "tags": [
+        "WordPress",
+        "Qentrah Languages",
+        "languages",
+        "multilingual"
+      ]
     },
     {
       "id": "content",
@@ -56,11 +92,29 @@
       },
       "image": "content.png",
       "text": {
-        "en": "Open Languages → Translations. Search content or change Content type to Pages, Posts, or a supported public content type. Select Manage translations. You can also use Translations in the Pages/Posts list or the Languages shortcut in the top toolbar. Save editor changes before leaving the editor. Only content you can edit is manageable.",
-        "ar": "افتح اللغات ← الترجمات. ابحث عن المحتوى أو اختر الصفحات أو المقالات أو نوع محتوى عام مدعوم. اختر إدارة الترجمات. يمكنك أيضًا استخدام رابط الترجمات في قائمة الصفحات والمقالات أو اختصار اللغات في الشريط العلوي. احفظ تعديلات المحرر قبل مغادرته. تظهر إجراءات التحرير فقط للمحتوى المسموح لك بتعديله.",
-        "es": "Abre Languages → Translations. Busca contenido o elige Pages, Posts u otro tipo público compatible. Pulsa Manage translations. También puedes usar Translations en la lista de páginas/entradas o Languages en la barra superior. Guarda los cambios antes de salir del editor. Solo puedes gestionar contenido que tengas permiso para editar.",
-        "fr": "Ouvrez Languages → Translations. Recherchez du contenu ou choisissez Pages, Posts ou un type public compatible. Cliquez sur Manage translations. Vous pouvez aussi utiliser Translations dans les listes ou Languages dans la barre supérieure. Enregistrez avant de quitter l’éditeur. Seul le contenu que vous pouvez modifier est gérable."
-      }
+        "en": "Open Languages → Translations.\n\nSearch content or change Content type to Pages, Posts, or a supported public content type.\n\nSelect Manage translations.\n\nYou can also use Translations in the Pages/Posts list or the Languages shortcut in the top toolbar.\n\nSave editor changes before leaving the editor.\n\nOnly content you can edit is manageable.\n\n[Continue to the next guide](/documentation/qentrah-languages/translate?lang=en).",
+        "ar": "افتح اللغات ← الترجمات.\n\nابحث عن المحتوى أو اختر الصفحات أو المقالات أو نوع محتوى عام مدعوم.\n\nاختر إدارة الترجمات.\n\nيمكنك أيضًا استخدام رابط الترجمات في قائمة الصفحات والمقالات أو اختصار اللغات في الشريط العلوي.\n\nاحفظ تعديلات المحرر قبل مغادرته.\n\nتظهر إجراءات التحرير فقط للمحتوى المسموح لك بتعديله.\n\n[انتقل إلى الدليل التالي](/documentation/qentrah-languages/translate?lang=ar).",
+        "es": "Abre Languages → Translations.\n\nBusca contenido o elige Pages, Posts u otro tipo público compatible.\n\nPulsa Manage translations.\n\nTambién puedes usar Translations en la lista de páginas/entradas o Languages en la barra superior.\n\nGuarda los cambios antes de salir del editor.\n\nSolo puedes gestionar contenido que tengas permiso para editar.\n\n[Continuar con la siguiente guía](/documentation/qentrah-languages/translate?lang=es).",
+        "fr": "Ouvrez Languages → Translations.\n\nRecherchez du contenu ou choisissez Pages, Posts ou un type public compatible.\n\nCliquez sur Manage translations.\n\nVous pouvez aussi utiliser Translations dans les listes ou Languages dans la barre supérieure.\n\nEnregistrez avant de quitter l’éditeur.\n\nSeul le contenu que vous pouvez modifier est gérable.\n\n[Passer au guide suivant](/documentation/qentrah-languages/translate?lang=fr)."
+      },
+      "seoTitle": {
+        "en": "3. Choose a page or post — Qentrah Languages",
+        "ar": "٣. اختيار صفحة أو مقال — Qentrah Languages",
+        "es": "3. Elegir una página o entrada — Qentrah Languages",
+        "fr": "3. Choisir une page ou un article — Qentrah Languages"
+      },
+      "seoDescription": {
+        "en": "Search content or change Content type to Pages, Posts, or a supported public content type.",
+        "ar": "ابحث عن المحتوى أو اختر الصفحات أو المقالات أو نوع محتوى عام مدعوم.",
+        "es": "Busca contenido o elige Pages, Posts u otro tipo público compatible.",
+        "fr": "Recherchez du contenu ou choisissez Pages, Posts ou un type public compatible."
+      },
+      "tags": [
+        "WordPress",
+        "Qentrah Languages",
+        "content",
+        "multilingual"
+      ]
     },
     {
       "id": "translate",
@@ -72,11 +126,29 @@
       },
       "image": "translations.png",
       "text": {
-        "en": "Each language has a card. Open editor opens its existing version. Create draft & edit copies the source layout into a separate draft and opens the normal editor. Translate the text, review images and links, and publish when ready. It is a copy for manual translation, not machine translation. Already have another translated page? Expand “Already translated? Link a page” and enter its WordPress ID. It must use the same content type and cannot replace an existing translation.",
-        "ar": "لكل لغة بطاقة. يفتح زر المحرر النسخة الحالية. ينشئ زر إنشاء مسودة وتحرير نسخة مستقلة من تخطيط المصدر ويفتح المحرر المعتاد. ترجم النص وراجع الصور والروابط ثم انشر. هذه نسخة للترجمة اليدوية وليست ترجمة آلية. إذا كانت لديك صفحة مترجمة، افتح خيار ربط صفحة وأدخل معرّفها في ووردبريس. يجب أن تكون من نوع المحتوى نفسه ولا يمكن أن تستبدل ترجمة مرتبطة بالفعل.",
-        "es": "Cada idioma tiene una tarjeta. Open editor abre la versión existente. Create draft & edit copia el diseño original a un borrador independiente y abre el editor habitual. Traduce el texto, revisa imágenes y enlaces y publica cuando esté listo. No es traducción automática. Si ya tienes una página traducida, abre “Already translated? Link a page” e introduce su ID de WordPress. Debe tener el mismo tipo de contenido y no puede sustituir una traducción existente.",
-        "fr": "Chaque langue dispose d’une carte. Open editor ouvre la version existante. Create draft & edit copie la mise en page source dans un brouillon distinct et ouvre l’éditeur habituel. Traduisez, vérifiez les images et liens, puis publiez. Ce n’est pas une traduction automatique. Pour une page déjà traduite, ouvrez « Already translated? Link a page » et saisissez son ID WordPress. Elle doit avoir le même type de contenu et ne peut remplacer une traduction existante."
-      }
+        "en": "Each language has a card.\n\nOpen editor opens its existing version.\n\nCreate draft & edit copies the source layout into a separate draft and opens the normal editor.\n\nTranslate the text, review images and links, and publish when ready.\n\nIt is a copy for manual translation, not machine translation.\n\nAlready have another translated page? Expand “Already translated? Link a page” and enter its WordPress ID.\n\nIt must use the same content type and cannot replace an existing translation.\n\n[Continue to the next guide](/documentation/qentrah-languages/review?lang=en).",
+        "ar": "لكل لغة بطاقة.\n\nيفتح زر المحرر النسخة الحالية.\n\nينشئ زر إنشاء مسودة وتحرير نسخة مستقلة من تخطيط المصدر ويفتح المحرر المعتاد.\n\nترجم النص وراجع الصور والروابط ثم انشر.\n\nهذه نسخة للترجمة اليدوية وليست ترجمة آلية.\n\nإذا كانت لديك صفحة مترجمة، افتح خيار ربط صفحة وأدخل معرّفها في ووردبريس.\n\nيجب أن تكون من نوع المحتوى نفسه ولا يمكن أن تستبدل ترجمة مرتبطة بالفعل.\n\n[انتقل إلى الدليل التالي](/documentation/qentrah-languages/review?lang=ar).",
+        "es": "Cada idioma tiene una tarjeta.\n\nOpen editor abre la versión existente.\n\nCreate draft & edit copia el diseño original a un borrador independiente y abre el editor habitual.\n\nTraduce el texto, revisa imágenes y enlaces y publica cuando esté listo.\n\nNo es traducción automática.\n\nSi ya tienes una página traducida, abre “Already translated? Link a page” e introduce su ID de WordPress.\n\nDebe tener el mismo tipo de contenido y no puede sustituir una traducción existente.\n\n[Continuar con la siguiente guía](/documentation/qentrah-languages/review?lang=es).",
+        "fr": "Chaque langue dispose d’une carte.\n\nOpen editor ouvre la version existante.\n\nCreate draft & edit copie la mise en page source dans un brouillon distinct et ouvre l’éditeur habituel.\n\nTraduisez, vérifiez les images et liens, puis publiez.\n\nCe n’est pas une traduction automatique.\n\nPour une page déjà traduite, ouvrez « Already translated? Link a page » et saisissez son ID WordPress.\n\nElle doit avoir le même type de contenu et ne peut remplacer une traduction existante.\n\n[Passer au guide suivant](/documentation/qentrah-languages/review?lang=fr)."
+      },
+      "seoTitle": {
+        "en": "4. Open or create a translation — Qentrah Languages",
+        "ar": "٤. فتح ترجمة أو إنشاؤها — Qentrah Languages",
+        "es": "4. Abrir o crear una traducción — Qentrah Languages",
+        "fr": "4. Ouvrir ou créer une traduction — Qentrah Languages"
+      },
+      "seoDescription": {
+        "en": "Open editor opens its existing version.",
+        "ar": "يفتح زر المحرر النسخة الحالية.",
+        "es": "Open editor abre la versión existente.",
+        "fr": "Open editor ouvre la version existante."
+      },
+      "tags": [
+        "WordPress",
+        "Qentrah Languages",
+        "translate",
+        "multilingual"
+      ]
     },
     {
       "id": "review",
@@ -88,11 +160,29 @@
       },
       "image": "arabic-page.png",
       "text": {
-        "en": "Translations are separate WordPress posts with their own revisions. When source content changes, its translation shows a review notice. Compare the source, update the translation, save, then mark it reviewed. There is no automatic overwrite or live synchronized editing. Use WordPress revisions to recover edits. Change a page’s assigned language only when its current assignment is wrong.",
-        "ar": "الترجمات صفحات مستقلة لها مراجعاتها في ووردبريس. عند تغيير محتوى المصدر تظهر رسالة تطلب مراجعة الترجمة. قارن المصدر وحدّث الترجمة واحفظها ثم علّمها كمراجعة. لا تحدث مزامنة حية أو كتابة فوق الترجمة تلقائيًا. استخدم مراجعات ووردبريس لاستعادة التعديلات. غيّر لغة الصفحة فقط لتصحيح تصنيف غير صحيح.",
-        "es": "Las traducciones tienen revisiones independientes. Si cambia el contenido original, aparece un aviso de revisión. Compara el original, actualiza y guarda la traducción y márcala como revisada. No hay sobrescritura automática ni edición sincronizada en directo. Recupera cambios con las revisiones de WordPress. Cambia el idioma asignado solo para corregir una asignación errónea.",
-        "fr": "Les traductions ont leurs propres révisions. Une modification du contenu source déclenche un avis de vérification. Comparez la source, actualisez et enregistrez la traduction, puis marquez-la comme vérifiée. Aucune écriture automatique ni synchronisation en direct. Utilisez les révisions WordPress pour restaurer des modifications. Changez la langue attribuée uniquement pour corriger une erreur."
-      }
+        "en": "Translations are separate WordPress posts with their own revisions.\n\nWhen source content changes, its translation shows a review notice.\n\nCompare the source, update the translation, save, then mark it reviewed.\n\nThere is no automatic overwrite or live synchronized editing.\n\nUse WordPress revisions to recover edits.\n\nChange a page’s assigned language only when its current assignment is wrong.\n\n[Continue to the next guide](/documentation/qentrah-languages/visitors?lang=en).",
+        "ar": "الترجمات صفحات مستقلة لها مراجعاتها في ووردبريس.\n\nعند تغيير محتوى المصدر تظهر رسالة تطلب مراجعة الترجمة.\n\nقارن المصدر وحدّث الترجمة واحفظها ثم علّمها كمراجعة.\n\nلا تحدث مزامنة حية أو كتابة فوق الترجمة تلقائيًا.\n\nاستخدم مراجعات ووردبريس لاستعادة التعديلات.\n\nغيّر لغة الصفحة فقط لتصحيح تصنيف غير صحيح.\n\n[انتقل إلى الدليل التالي](/documentation/qentrah-languages/visitors?lang=ar).",
+        "es": "Las traducciones tienen revisiones independientes.\n\nSi cambia el contenido original, aparece un aviso de revisión.\n\nCompara el original, actualiza y guarda la traducción y márcala como revisada.\n\nNo hay sobrescritura automática ni edición sincronizada en directo.\n\nRecupera cambios con las revisiones de WordPress.\n\nCambia el idioma asignado solo para corregir una asignación errónea.\n\n[Continuar con la siguiente guía](/documentation/qentrah-languages/visitors?lang=es).",
+        "fr": "Les traductions ont leurs propres révisions.\n\nUne modification du contenu source déclenche un avis de vérification.\n\nComparez la source, actualisez et enregistrez la traduction, puis marquez-la comme vérifiée.\n\nAucune écriture automatique ni synchronisation en direct.\n\nUtilisez les révisions WordPress pour restaurer des modifications.\n\nChangez la langue attribuée uniquement pour corriger une erreur.\n\n[Passer au guide suivant](/documentation/qentrah-languages/visitors?lang=fr)."
+      },
+      "seoTitle": {
+        "en": "5. Review changes safely — Qentrah Languages",
+        "ar": "٥. مراجعة التغييرات بأمان — Qentrah Languages",
+        "es": "5. Revisar cambios con seguridad — Qentrah Languages",
+        "fr": "5. Vérifier les modifications — Qentrah Languages"
+      },
+      "seoDescription": {
+        "en": "When source content changes, its translation shows a review notice.",
+        "ar": "عند تغيير محتوى المصدر تظهر رسالة تطلب مراجعة الترجمة.",
+        "es": "Si cambia el contenido original, aparece un aviso de revisión.",
+        "fr": "Une modification du contenu source déclenche un avis de vérification."
+      },
+      "tags": [
+        "WordPress",
+        "Qentrah Languages",
+        "review",
+        "multilingual"
+      ]
     },
     {
       "id": "visitors",
@@ -103,11 +193,29 @@
         "fr": "6. Afficher les langues aux visiteurs"
       },
       "text": {
-        "en": "Add the Language switcher block or [qentrah_languages] shortcode in a supported theme area. Dentora Production integrates it automatically. Only published matching translations appear; drafts and missing languages are hidden. WordPress keeps its normal URLs. The plugin adds language/direction and reciprocal hreflang for published versions. SEO rankings are not guaranteed; check your sitemap and SEO plugin on your own site.",
-        "ar": "أضف بلوك محوّل اللغة أو الكود القصير [qentrah_languages] في منطقة يدعمها القالب. يدمجه قالب Dentora Production تلقائيًا. تظهر الترجمات المنشورة المطابقة فقط وتُخفى المسودات واللغات غير المتاحة. يحتفظ ووردبريس بروابطه المعتادة. تضيف الإضافة اللغة والاتجاه وروابط hreflang للنسخ المنشورة. لا يوجد ضمان لترتيب البحث؛ راجع خريطة الموقع وإضافة SEO لديك.",
-        "es": "Añade el bloque Language switcher o el shortcode [qentrah_languages] en una zona compatible del tema. Dentora Production lo integra automáticamente. Solo aparecen traducciones publicadas; se ocultan borradores e idiomas ausentes. Se mantienen las URL normales. El plugin añade idioma, dirección y hreflang recíprocos. No garantiza posiciones en buscadores; comprueba tu sitemap y plugin SEO.",
-        "fr": "Ajoutez le bloc Language switcher ou le shortcode [qentrah_languages] dans une zone compatible. Dentora Production l’intègre automatiquement. Seules les traductions publiées apparaissent ; les brouillons et langues manquantes sont masqués. Les URL WordPress sont conservées. L’extension ajoute langue, direction et hreflang réciproques. Aucun classement garanti ; vérifiez votre sitemap et extension SEO."
-      }
+        "en": "Add the Language switcher block or `[qentrah_languages]` shortcode in a supported theme area.\n\nDentora Production integrates it automatically.\n\nOnly published matching translations appear; drafts and missing languages are hidden.\n\nWordPress keeps its normal URLs.\n\nThe plugin adds language/direction and reciprocal hreflang for published versions.\n\nSEO rankings are not guaranteed; check your sitemap and SEO plugin on your own site.\n\n[Continue to the next guide](/documentation/qentrah-languages/ownership?lang=en).",
+        "ar": "أضف بلوك محوّل اللغة أو الكود القصير `[qentrah_languages]` في منطقة يدعمها القالب.\n\nيدمجه قالب Dentora Production تلقائيًا.\n\nتظهر الترجمات المنشورة المطابقة فقط وتُخفى المسودات واللغات غير المتاحة.\n\nيحتفظ ووردبريس بروابطه المعتادة.\n\nتضيف الإضافة اللغة والاتجاه وروابط hreflang للنسخ المنشورة.\n\nلا يوجد ضمان لترتيب البحث؛ راجع خريطة الموقع وإضافة SEO لديك.\n\n[انتقل إلى الدليل التالي](/documentation/qentrah-languages/ownership?lang=ar).",
+        "es": "Añade el bloque Language switcher o el shortcode `[qentrah_languages]` en una zona compatible del tema.\n\nDentora Production lo integra automáticamente.\n\nSolo aparecen traducciones publicadas; se ocultan borradores e idiomas ausentes.\n\nSe mantienen las URL normales.\n\nEl plugin añade idioma, dirección y hreflang recíprocos.\n\nNo garantiza posiciones en buscadores; comprueba tu sitemap y plugin SEO.\n\n[Continuar con la siguiente guía](/documentation/qentrah-languages/ownership?lang=es).",
+        "fr": "Ajoutez le bloc Language switcher ou le shortcode `[qentrah_languages]` dans une zone compatible.\n\nDentora Production l’intègre automatiquement.\n\nSeules les traductions publiées apparaissent ; les brouillons et langues manquantes sont masqués.\n\nLes URL WordPress sont conservées.\n\nL’extension ajoute langue, direction et hreflang réciproques.\n\nAucun classement garanti ; vérifiez votre sitemap et extension SEO.\n\n[Passer au guide suivant](/documentation/qentrah-languages/ownership?lang=fr)."
+      },
+      "seoTitle": {
+        "en": "6. Show languages to visitors — Qentrah Languages",
+        "ar": "٦. عرض اللغات للزوار — Qentrah Languages",
+        "es": "6. Mostrar idiomas a visitantes — Qentrah Languages",
+        "fr": "6. Afficher les langues aux visiteurs — Qentrah Languages"
+      },
+      "seoDescription": {
+        "en": "Dentora Production integrates it automatically.",
+        "ar": "يدمجه قالب Dentora Production تلقائيًا.",
+        "es": "Dentora Production lo integra automáticamente.",
+        "fr": "Dentora Production l’intègre automatiquement."
+      },
+      "tags": [
+        "WordPress",
+        "Qentrah Languages",
+        "visitors",
+        "multilingual"
+      ]
     },
     {
       "id": "ownership",
@@ -118,11 +226,29 @@
         "fr": "7. Mises à jour, propriété et assistance"
       },
       "text": {
-        "en": "Download versioned releases from GitHub; this preview does not automatically update through WordPress.org. Back up first, then upload the newer plugin ZIP and choose Replace current with uploaded. Your translations and settings remain in WordPress. Settings → Export relationships downloads a JSON map; use Tools → Export for content. Removing the plugin retains content but removes its switcher and language behavior. Free GPL-2.0-or-later. Report reproducible issues on GitHub without passwords or private content. WooCommerce, multisite and third-party builder integrations are not certified.",
-        "ar": "نزّل الإصدارات من GitHub؛ هذه النسخة التجريبية لا تتحدث تلقائيًا عبر WordPress.org. خذ نسخة احتياطية ثم ارفع الملف الجديد واختر استبدال النسخة الحالية. تبقى الترجمات والإعدادات في ووردبريس. يصدّر خيار تصدير العلاقات ملف JSON؛ وللمحتوى استخدم أدوات ← تصدير. حذف الإضافة يُبقي المحتوى لكنه يزيل محوّل اللغة وسلوك اللغات. مجانية بترخيص GPL-2.0-or-later. أبلغ عن المشاكل على GitHub دون كلمات مرور أو بيانات خاصة. لم تُعتمد توافقية WooCommerce أو الشبكات المتعددة أو أدوات البناء الأخرى.",
-        "es": "Descarga versiones desde GitHub; esta versión preliminar no se actualiza automáticamente mediante WordPress.org. Haz una copia de seguridad, sube el nuevo ZIP y elige reemplazar la versión actual. Las traducciones y ajustes permanecen en WordPress. Export relationships descarga las relaciones en JSON; usa Herramientas → Exportar para el contenido. Desinstalar conserva el contenido pero elimina el selector y su comportamiento. Gratis, GPL-2.0-or-later. Informa de problemas reproducibles en GitHub sin contraseñas ni contenido privado. WooCommerce, multisitio y otros constructores no están certificados.",
-        "fr": "Téléchargez les versions sur GitHub ; cette préversion ne se met pas à jour automatiquement via WordPress.org. Sauvegardez, téléversez le nouveau ZIP et remplacez la version actuelle. Les traductions et réglages restent dans WordPress. Export relationships exporte les relations en JSON ; utilisez Outils → Exporter pour le contenu. La suppression conserve le contenu mais retire le sélecteur et son comportement. Gratuit, GPL-2.0-or-later. Signalez les problèmes reproductibles sur GitHub sans données privées. WooCommerce, multisite et constructeurs tiers non certifiés."
-      }
+        "en": "Download versioned releases from GitHub; this preview does not automatically update through WordPress.org.\n\nBack up first, then upload the newer plugin ZIP and choose Replace current with uploaded.\n\nYour translations and settings remain in WordPress.\n\nSettings → Export relationships downloads a JSON map; use Tools → Export for content.\n\nRemoving the plugin retains content but removes its switcher and language behavior.\n\nFree GPL-2.0-or-later.\n\nReport reproducible issues on GitHub without passwords or private content.\n\nWooCommerce, multisite and third-party builder integrations are not certified.\n\n[Continue to the next guide](/documentation/qentrah-languages/install?lang=en).\n\n[GitHub releases](https://github.com/Up-to-code/qentrah-languages/releases) · [GitHub issues](https://github.com/Up-to-code/qentrah-languages/issues)",
+        "ar": "نزّل الإصدارات من GitHub؛ هذه النسخة التجريبية لا تتحدث تلقائيًا عبر WordPress.org.\n\nخذ نسخة احتياطية ثم ارفع الملف الجديد واختر استبدال النسخة الحالية.\n\nتبقى الترجمات والإعدادات في ووردبريس.\n\nيصدّر خيار تصدير العلاقات ملف JSON؛ وللمحتوى استخدم أدوات ← تصدير.\n\nحذف الإضافة يُبقي المحتوى لكنه يزيل محوّل اللغة وسلوك اللغات.\n\nمجانية بترخيص GPL-2.0-or-later.\n\nأبلغ عن المشاكل على GitHub دون كلمات مرور أو بيانات خاصة.\n\nلم تُعتمد توافقية WooCommerce أو الشبكات المتعددة أو أدوات البناء الأخرى.\n\n[انتقل إلى الدليل التالي](/documentation/qentrah-languages/install?lang=ar).\n\n[GitHub releases](https://github.com/Up-to-code/qentrah-languages/releases) · [GitHub issues](https://github.com/Up-to-code/qentrah-languages/issues)",
+        "es": "Descarga versiones desde GitHub; esta versión preliminar no se actualiza automáticamente mediante WordPress.org.\n\nHaz una copia de seguridad, sube el nuevo ZIP y elige reemplazar la versión actual.\n\nLas traducciones y ajustes permanecen en WordPress.\n\nExport relationships descarga las relaciones en JSON; usa Herramientas → Exportar para el contenido.\n\nDesinstalar conserva el contenido pero elimina el selector y su comportamiento.\n\nGratis, GPL-2.0-or-later.\n\nInforma de problemas reproducibles en GitHub sin contraseñas ni contenido privado.\n\nWooCommerce, multisitio y otros constructores no están certificados.\n\n[Continuar con la siguiente guía](/documentation/qentrah-languages/install?lang=es).\n\n[GitHub releases](https://github.com/Up-to-code/qentrah-languages/releases) · [GitHub issues](https://github.com/Up-to-code/qentrah-languages/issues)",
+        "fr": "Téléchargez les versions sur GitHub ; cette préversion ne se met pas à jour automatiquement via WordPress.org.\n\nSauvegardez, téléversez le nouveau ZIP et remplacez la version actuelle.\n\nLes traductions et réglages restent dans WordPress.\n\nExport relationships exporte les relations en JSON ; utilisez Outils → Exporter pour le contenu.\n\nLa suppression conserve le contenu mais retire le sélecteur et son comportement.\n\nGratuit, GPL-2.0-or-later.\n\nSignalez les problèmes reproductibles sur GitHub sans données privées.\n\nWooCommerce, multisite et constructeurs tiers non certifiés.\n\n[Passer au guide suivant](/documentation/qentrah-languages/install?lang=fr).\n\n[GitHub releases](https://github.com/Up-to-code/qentrah-languages/releases) · [GitHub issues](https://github.com/Up-to-code/qentrah-languages/issues)"
+      },
+      "seoTitle": {
+        "en": "7. Updates, ownership & support — Qentrah Languages",
+        "ar": "٧. التحديثات والملكية والدعم — Qentrah Languages",
+        "es": "7. Actualizaciones, propiedad y soporte — Qentrah Languages",
+        "fr": "7. Mises à jour, propriété et assistance — Qentrah Languages"
+      },
+      "seoDescription": {
+        "en": "Back up first, then upload the newer plugin ZIP and choose Replace current with uploaded.",
+        "ar": "خذ نسخة احتياطية ثم ارفع الملف الجديد واختر استبدال النسخة الحالية.",
+        "es": "Haz una copia de seguridad, sube el nuevo ZIP y elige reemplazar la versión actual.",
+        "fr": "Sauvegardez, téléversez le nouveau ZIP et remplacez la version actuelle."
+      },
+      "tags": [
+        "WordPress",
+        "Qentrah Languages",
+        "ownership",
+        "multilingual"
+      ]
     }
   ]
 }

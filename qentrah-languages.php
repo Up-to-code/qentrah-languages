@@ -3,7 +3,7 @@
  * Plugin Name: Qentrah Languages
  * Plugin URI: https://github.com/Up-to-code/qentrah-languages
  * Description: Local-first multilingual publishing with native editor language navigation, linked translations and accessible language switchers.
- * Version: 0.2.0
+ * Version: 0.3.0
  * Requires at least: 6.6
  * Requires PHP: 8.1
  * Author: Qentrah
@@ -13,8 +13,28 @@
  * Text Domain: qentrah-languages
  */
 if (!defined('ABSPATH')) { exit; }
-define('QL_VERSION', '0.2.0');
+define('QL_VERSION', '0.3.0');
 add_action('init',function(){load_plugin_textdomain('qentrah-languages',false,dirname(plugin_basename(__FILE__)).'/languages');});
+/** Validate BCP 47 syntax, including private-use and grandfathered tags.
+ * This accepts syntax, not a claim that a tag has an IANA registration.
+ */
+function ql_valid_language_tag($tag) {
+    if (!is_string($tag) || strlen($tag) > 255) return false;
+    $tag = strtolower($tag);
+    $grandfathered = array('en-gb-oed','i-ami','i-bnn','i-default','i-enochian','i-hak','i-klingon','i-lux','i-mingo','i-navajo','i-pwn','i-tao','i-tay','i-tsu','sgn-be-fr','sgn-be-nl','sgn-ch-de','art-lojban','cel-gaulish','no-bok','no-nyn','zh-guoyu','zh-hakka','zh-min','zh-min-nan','zh-xiang');
+    if (in_array($tag, $grandfathered, true)) return true;
+    if (preg_match('/^x(?:-[a-z0-9]{1,8})+$/D', $tag)) return true;
+    if (!preg_match('/^(?:[a-z]{2,3}(?:-[a-z]{3}){0,3}|[a-z]{4}|[a-z]{5,8})(?:-[a-z]{4})?(?:-(?:[a-z]{2}|[0-9]{3}))?(?:-(?:[a-z0-9]{5,8}|[0-9][a-z0-9]{3}))*(?:-[0-9a-wy-z](?:-[a-z0-9]{2,8})+)*(?:-x(?:-[a-z0-9]{1,8})+)?$/D', $tag)) return false;
+    $seen = array();
+    foreach (explode('-', $tag) as $part) {
+        if ($part === 'x') break;
+        if (strlen($part) === 1) {
+            if (isset($seen[$part])) return false;
+            $seen[$part] = true;
+        }
+    }
+    return true;
+}
 function ql_languages() {
     return get_option('ql_languages', array(
         'en'=>array('name'=>'English','locale'=>'en_US','dir'=>'ltr'),
@@ -105,15 +125,15 @@ add_action('init',function(){register_block_type('qentrah/language-switcher',arr
 require_once __DIR__.'/includes/admin.php';
 function ql_settings(){
     if(!current_user_can('manage_options'))return;
-    if(isset($_POST['ql_add'])){check_admin_referer('ql_settings');$code=sanitize_key(wp_unslash($_POST['code']??''));$name=sanitize_text_field(wp_unslash($_POST['name']??''));$locale=sanitize_text_field(wp_unslash($_POST['locale']??''))?:$code;$dir=sanitize_key(wp_unslash($_POST['dir']??''))==='rtl'?'rtl':'ltr';
-        if(preg_match('/^[a-z]{2,3}(-[a-z0-9]{2,8})*$/',$code)&&preg_match('/^[a-z]{2,3}([_-][A-Za-z0-9]{2,8})*$/',$locale)&&$name){$languages=ql_languages();$languages[$code]=array('name'=>$name,'locale'=>$locale,'dir'=>$dir);update_option('ql_languages',$languages);echo '<div class="notice notice-success"><p>'.esc_html__('Language saved.','qentrah-languages').'</p></div>';}
+    if(isset($_POST['ql_add'])){check_admin_referer('ql_settings');$code=strtolower(trim(wp_unslash($_POST['code']??'')));$name=sanitize_text_field(wp_unslash($_POST['name']??''));$locale=sanitize_text_field(wp_unslash($_POST['locale']??''))?:$code;$dir=sanitize_key(wp_unslash($_POST['dir']??''))==='rtl'?'rtl':'ltr';
+        if(ql_valid_language_tag($code)&&ql_valid_language_tag(str_replace('_','-',$locale))&&$name){$languages=ql_languages();$languages[$code]=array('name'=>$name,'locale'=>$locale,'dir'=>$dir);update_option('ql_languages',$languages);echo '<div class="notice notice-success"><p>'.esc_html__('Language saved.','qentrah-languages').'</p></div>';}
         else echo '<div class="notice notice-error"><p>'.esc_html__('Enter a valid language code, locale and display name.','qentrah-languages').'</p></div>';
     }
     if(isset($_POST['ql_default'])){check_admin_referer('ql_settings');$code=sanitize_key(wp_unslash($_POST['default_language']??''));if(isset(ql_languages()[$code]))update_option('ql_default_language',$code);}
     echo '<div class="wrap ql-app"><div class="ql-panel"><h1>Qentrah Languages</h1><p>'.esc_html__('Own your languages. Edit in WordPress. Content stays in your database; no external translation service is used.','qentrah-languages').'</p><table class="widefat"><thead><tr><th>Language</th><th>Code</th><th>Locale</th><th>Direction</th></tr></thead><tbody>';
     foreach(ql_languages() as $code=>$language)echo '<tr><td>'.esc_html($language['name']).'</td><td>'.esc_html($code).'</td><td>'.esc_html($language['locale']).'</td><td>'.esc_html($language['dir']).'</td></tr>';
-    echo '</tbody></table><p><a class="button" href="'.esc_url(ql_admin_url()).'">'.esc_html__('Manage translations','qentrah-languages').'</a></p><h2>'.esc_html__('Add or update a language','qentrah-languages').'</h2><form method="post">';wp_nonce_field('ql_settings');
-    foreach(array('code'=>'Language code (fr, de, ar)','name'=>'Display name','locale'=>'Locale (optional: fr_FR, de_DE, ar)') as $key=>$label)echo '<p><label>'.esc_html($label).' <input '.($key==='locale'?'':'required').' name="'.esc_attr($key).'" type="text"></label></p>';
+    echo '</tbody></table><p><a class="button" href="'.esc_url(ql_admin_url()).'">'.esc_html__('Manage translations','qentrah-languages').'</a></p><h2>'.esc_html__('Add or update a language','qentrah-languages').'</h2><p>'.esc_html__('Add any content language using a BCP 47 tag and a name in its own script. No fixed language list or translation service is required. Choose the writing direction explicitly.','qentrah-languages').'</p><form method="post">';wp_nonce_field('ql_settings');
+    foreach(array('code'=>'Language tag (en, ar, pt-BR, zh-Hant, x-custom)','name'=>'Display name','locale'=>'Locale (optional: fr_FR, de_DE, ar)') as $key=>$label)echo '<p><label>'.esc_html($label).' <input '.($key==='locale'?'':'required').' name="'.esc_attr($key).'" type="text"></label></p>';
     echo '<p><label>Direction <select name="dir"><option value="ltr">Left to right</option><option value="rtl">Right to left</option></select></label></p>';submit_button('Save language','primary','ql_add');echo '</form><h2>Default language</h2><form method="post">';wp_nonce_field('ql_settings');echo '<select name="default_language">';foreach(ql_languages() as $code=>$language)echo '<option value="'.esc_attr($code).'" '.selected(ql_default_language(),$code,false).'>'.esc_html($language['name']).'</option>';echo '</select>';submit_button('Save default','secondary','ql_default');echo '</form><h2>Data portability</h2><p>Export language relationships and settings. Use WordPress Tools → Export for the content itself. Posts and translations are retained when the plugin is removed.</p><a class="button" href="'.esc_url(wp_nonce_url(admin_url('admin-post.php?action=ql_export'),'ql_export')).'">Export relationships</a></div></div>';
 }
 add_action('admin_post_ql_export',function(){if(!current_user_can('manage_options'))wp_die('Forbidden',403);check_admin_referer('ql_export');$posts=get_posts(array('post_type'=>'any','post_status'=>'any','numberposts'=>-1,'meta_key'=>'_ql_group'));$rows=array();foreach($posts as $post)$rows[]=array('id'=>$post->ID,'url'=>get_permalink($post),'language'=>ql_post_language($post->ID),'group'=>get_post_meta($post->ID,'_ql_group',true));nocache_headers();header('Content-Type: application/json; charset=utf-8');header('Content-Disposition: attachment; filename=qentrah-languages.json');echo wp_json_encode(array('version'=>1,'languages'=>ql_languages(),'default'=>ql_default_language(),'relationships'=>$rows),JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);exit;});

@@ -1,0 +1,12 @@
+{
+  "name": "qentrah-languages-build",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "manual": "node tools/manual.mjs"
+  },
+  "dependencies": {
+    "marked": "^18.0.14"
+  }
+}

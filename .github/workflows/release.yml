@@ -22,6 +22,7 @@ jobs:
           grep -Fx "Stable tag: $VERSION" readme.txt
           find . -name '*.php' -print0 | xargs -0 -n1 php -l
           python3 tools/package.py
+          npm ci
           node tools/manual.mjs
           cd dist/manual && zip -r ../qentrah-languages-manual.zip *.html
           cd .. && sha256sum *.zip > SHA256SUMS

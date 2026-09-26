@@ -33,3 +33,4 @@ jobs:
           ln -s "$GITHUB_WORKSPACE" /tmp/wordpress/wp-content/plugins/qentrah-languages
           php /tmp/wp plugin activate qentrah-languages --path=/tmp/wordpress
           php /tmp/wp --path=/tmp/wordpress --user=testadmin eval-file "$GITHUB_WORKSPACE/tests/integration.php"
+          php /tmp/wp --path=/tmp/wordpress --user=testadmin eval-file "$GITHUB_WORKSPACE/tests/language-tags.php"

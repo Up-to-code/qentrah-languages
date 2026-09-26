@@ -1,3 +1,9 @@
+# 0.3.0
+
+- Accept BCP 47 content-language tags, including script/region variants, extensions, private-use and grandfathered tags. No fixed language list.
+- Preserve Unicode display names and explicit RTL/LTR direction.
+- Format multilingual manuals with task steps and direct installation links.
+
 # Changelog
 
 ## 0.2.0 — 2026-09-26
