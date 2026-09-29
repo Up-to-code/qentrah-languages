@@ -1,46 +1,20 @@
-name: Versioned release
+name: Publish approved plugin artifacts
 on:
   push:
     tags: ['v*']
 permissions:
   contents: write
 jobs:
-  validate:
-    uses: ./.github/workflows/ci.yml
   release:
-    needs: validate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Validate version and PHP
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify approved artifacts
         run: |
-          VERSION="${GITHUB_REF_NAME#v}"
-          grep -F "Version: $VERSION" qentrah-languages.php
-          grep -Fx "Stable tag: $VERSION" readme.txt
-          find . -name '*.php' -print0 | xargs -0 -n1 php -l
-          python3 tools/package.py
-          npm ci
-          node tools/manual.mjs
-          cd dist/manual && zip -r ../qentrah-languages-manual.zip *.html
-          cd .. && sha256sum *.zip > SHA256SUMS
-      - name: Publish GitHub ZIP
+          test "v$(cat .approved-release/version)" = "$GITHUB_REF_NAME"
+          cd .approved-release
+          sha256sum -c SHA256SUMS
+      - name: Attach exact approved ZIPs
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" dist/qentrah-languages.zip dist/qentrah-languages-manual.zip dist/SHA256SUMS --generate-notes --prerelease
-  wordpress-org:
-    needs: release
-    if: vars.WORDPRESS_ORG_APPROVED == 'true'
-    environment: wordpress-org
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Ensure this is a stable version
-        run: '[[ "$GITHUB_REF_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]'
-      - uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2
-        env:
-          SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
-          SVN_PASSWORD: ${{ secrets.WP_ORG_SVN_PASSWORD }}
-          SLUG: ${{ vars.WP_ORG_SLUG }}
+        run: gh release create "$GITHUB_REF_NAME" .approved-release/*.zip .approved-release/SHA256SUMS --title "Qentrah Languages $GITHUB_REF_NAME" --notes "Approved source and packages published from Qentrah's product release workflow."

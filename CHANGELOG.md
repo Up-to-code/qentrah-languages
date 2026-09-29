@@ -1,3 +1,7 @@
+# 0.3.1
+
+- Publish the same plugin and localized manual from the private product monorepo with checksummed release artifacts. Plugin behavior is unchanged.
+
 # 0.3.0
 
 - Accept BCP 47 content-language tags, including script/region variants, extensions, private-use and grandfathered tags. No fixed language list.

@@ -3,7 +3,7 @@
  * Plugin Name: Qentrah Languages
  * Plugin URI: https://github.com/Up-to-code/qentrah-languages
  * Description: Local-first multilingual publishing with native editor language navigation, linked translations and accessible language switchers.
- * Version: 0.3.0
+ * Version: 0.3.1
  * Requires at least: 6.6
  * Requires PHP: 8.1
  * Author: Qentrah
@@ -13,7 +13,7 @@
  * Text Domain: qentrah-languages
  */
 if (!defined('ABSPATH')) { exit; }
-define('QL_VERSION', '0.3.0');
+define('QL_VERSION', '0.3.1');
 add_action('init',function(){load_plugin_textdomain('qentrah-languages',false,dirname(plugin_basename(__FILE__)).'/languages');});
 /** Validate BCP 47 syntax, including private-use and grandfathered tags.
  * This accepts syntax, not a claim that a tag has an IANA registration.
